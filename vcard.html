@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovConsult - Digital Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .card-container {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #000066;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 50px;
+        }
+
+        .company-name {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .action-button {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-button:first-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .action-button i {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .info-section {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            color: #333;
+            font-weight: bold;
+            display: inline;
+        }
+
+        .info-value {
+            color: #333;
+            display: inline;
+            margin-left: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-icon {
+            width: 30px;
+            color: #999;
+            margin-right: 15px;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-value {
+            color: #0066cc;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .contact-label {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .download-button {
+            display: block;
+            background-color: #4dabf7;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-button i {
+            margin-right: 10px;
+        }
+
+        .float-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #4dabf7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .card-container {
+                max-width: 800px;
+                margin: 0 auto;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .float-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container" id="cardContainer">
+        <div class="header">
+            <div class="logo">
+                <img src="./4.png" style="zoom: 2; border-radius:50%; margin-bottom: 5px;" alt="IC Logo">
+            </div>
+            <div class="company-name">InnovConsult</div>
+            <div class="action-buttons">
+                <a href="tel:00213549161883" class="action-button">
+                    <i class="fas fa-phone"></i>
+                    <span>CALL</span>
+                </a>
+                <a href="mailto:faridabdeddaim@hotmail.fr" class="action-button">
+                    <i class="fas fa-envelope"></i>
+                    <span>EMAIL</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-item">
+                <span class="info-label">nom:</span>
+                <span class="info-value">ABDEDDAIM Farid</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">AE:</span>
+                <span class="info-value">10599024700104007</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">NIF:</span>
+                <span class="info-value">15907170010419701980</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">AI:</span>
+                <span class="info-value">1901647537</span>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                    <a href="tel:00213549161883" class="contact-value">00213 549 161 883</a>
+                    <div class="contact-label">Mobile</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                    <a href="mailto:faridabdeddaim@hotmail.fr" class="contact-value">faridabdeddaim@hotmail.fr</a>
+                    <div class="contact-label">Email</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="download-button" id="downloadVcard">
+            <i class="fas fa-download"></i>download visit card
+        </a>
+    </div>
+
+    
+
+    <!-- Include html2canvas library -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <script>
+        // Generate vCard data
+        function generateVCard() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:ABDEDDAIM Farid
+TEL;TYPE=CELL:00213 549 161 883
+EMAIL:faridabdeddaim@hotmail.fr
+NOTE:AE: 10599024700104007, NIF: 15907170010419701980, AI: 1901647537
+END:VCARD`;
+            
+            return vcard;
+        }
+
+        // Download vCard function
+        function downloadVCard() {
+            const vcard = generateVCard();
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ABDEDDAIM_Farid.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Download card as image
+        function downloadCardAsImage() {
+            // Hide the float button temporarily for the screenshot
+            const floatButton = document.getElementById('floatButton');
+            floatButton.style.display = 'none';
+            
+            // Capture the card container
+            html2canvas(document.getElementById('cardContainer')).then(canvas => {
+                // Show the float button again
+                floatButton.style.display = '';
+                
+                // Convert canvas to image and download
+                const image = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = image;
+                a.download = 'InnovConsult_Card.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        }
+
+        // Add event listeners
+        document.getElementById('downloadVcard').addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadVCard();
+        });
+
+        document.getElementById('floatButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadCardAsImage();
+        });
+    </script>
+</body>
+</html>

@@ -172,6 +172,62 @@
                 display: none;
             }
         }
+
+        /* QR Code Button - only visible on desktop */
+        .see-qr-button {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .see-qr-button {
+                display: block;
+                background-color: #0066cc;
+            }
+        }
+        
+        /* QR Modal Styles */
+        .qr-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .qr-modal-content {
+            background-color: white;
+            margin: auto;
+
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: black;
+        }
+        
+        .qr-image {
+            margin: 20px 0;
+        }
+        
+        .qr-image img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -236,12 +292,30 @@
         <a href="#" class="download-button" id="downloadVcard">
             <i class="fas fa-download"></i>download visit card
         </a>
+        
+        <!-- Add See QR button - only visible on desktop -->
+        <a href="#" class="download-button see-qr-button" id="seeQrButton">
+            <i class="fas fa-qrcode"></i>See QR Code
+        </a>
     </div>
 
-    
+    <!-- QR Code Modal - only visible when triggered on desktop -->
+    <div id="qrModal" class="qr-modal">
+        <div class="qr-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Scan QR Code</h2>
+            <div class="qr-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20design%20%283%29-wAm0NehAT8u8Ky0sWiWsPRLGMiVs2H.png" alt="QR Code">
+            </div>
+        </div>
+    </div>
+
+    <div class="float-button" id="floatButton">
+        <i class="fas fa-image"></i>
+    </div>
 
     <!-- Include html2canvas library -->
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     
     <script>
         // Generate vCard data
@@ -304,6 +378,34 @@ END:VCARD`;
             e.preventDefault();
             downloadCardAsImage();
         });
+
+        // QR Code Modal functionality
+        const qrModal = document.getElementById('qrModal');
+        const seeQrButton = document.getElementById('seeQrButton');
+        const closeModal = document.querySelector('.close-modal');
+        
+        // Open modal when See QR button is clicked
+        if (seeQrButton) {
+            seeQrButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                qrModal.style.display = 'block';
+            });
+        }
+        
+        // Close modal when X is clicked
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                qrModal.style.display = 'none';
+            });
+        }
+        
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', function(e) {
+            if (e.target === qrModal) {
+                qrModal.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
+
